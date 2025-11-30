@@ -4,7 +4,8 @@ import { fileURLToPath, URL } from 'node:url'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/my_gbf/',
+  // 開發環境使用根路徑，生產環境使用 /my_gbf/
+  base: process.env.NODE_ENV === 'production' ? '/my_gbf/' : '/',
   plugins: [vue()],
   resolve: {
     alias: {
