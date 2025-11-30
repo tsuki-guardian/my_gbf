@@ -1,0 +1,131 @@
+{
+	"gachaName": "火属性SSレア確定ガチャセット",
+	"Summons": [
+		{
+			"name": "アグニス",
+			"rate": "7.692%",
+			"type": "Summons",
+			"rare": "SSR",
+			"summonName": "アグニス",
+			"weaponType": "",
+			"attribute": "火"
+		},
+		{
+			"name": "ウィルナス",
+			"rate": "7.692%",
+			"type": "Summons",
+			"rare": "SSR",
+			"summonName": "ウィルナス",
+			"weaponType": "",
+			"attribute": "火"
+		},
+		{
+			"name": "シヴァ",
+			"rate": "7.692%",
+			"type": "Summons",
+			"rare": "SSR",
+			"summonName": "シヴァ",
+			"weaponType": "",
+			"attribute": "火"
+		},
+		{
+			"name": "セキトバ",
+			"rate": "7.692%",
+			"type": "Summons",
+			"rare": "SSR",
+			"summonName": "セキトバ",
+			"weaponType": "",
+			"attribute": "火"
+		},
+		{
+			"name": "ソウルインヴォーカー",
+			"rate": "7.692%",
+			"type": "Summons",
+			"rare": "SSR",
+			"summonName": "ソウルインヴォーカー",
+			"weaponType": "",
+			"attribute": "火"
+		},
+		{
+			"name": "ヘカテー",
+			"rate": "7.692%",
+			"type": "Summons",
+			"rare": "SSR",
+			"summonName": "ヘカテー",
+			"weaponType": "",
+			"attribute": "火"
+		},
+		{
+			"name": "ミカエル",
+			"rate": "7.692%",
+			"type": "Summons",
+			"rare": "SSR",
+			"summonName": "ミカエル",
+			"weaponType": "",
+			"attribute": "火"
+		}
+	],
+	"Characters": [
+		{
+			"name": "グラッドビーク (ラヴィリタ)",
+			"rate": "7.692%",
+			"type": "Characters",
+			"rare": "SSR",
+			"weaponName": "グラッドビーク",
+			"charName": "ラヴィリタ",
+			"weaponType": "剣",
+			"attribute": "火"
+		},
+		{
+			"name": "クリムゾンスティンガー (ラガッツォ)",
+			"rate": "7.692%",
+			"type": "Characters",
+			"rare": "SSR",
+			"weaponName": "クリムゾンスティンガー",
+			"charName": "ラガッツォ",
+			"weaponType": "槍",
+			"attribute": "火"
+		},
+		{
+			"name": "ロジックブレイカー (バロワ＆サーヤ)",
+			"rate": "7.692%",
+			"type": "Characters",
+			"rare": "SSR",
+			"weaponName": "ロジックブレイカー",
+			"charName": "バロワ＆サーヤ",
+			"weaponType": "銃",
+			"attribute": "火"
+		},
+		{
+			"name": "セィワール・ラハブ (ハウヘト)",
+			"rate": "7.692%",
+			"type": "Characters",
+			"rare": "SSR",
+			"weaponName": "セィワール・ラハブ",
+			"charName": "ハウヘト",
+			"weaponType": "格",
+			"attribute": "火"
+		},
+		{
+			"name": "術繰の籠手 (さと)",
+			"rate": "7.692%",
+			"type": "Characters",
+			"rare": "SSR",
+			"weaponName": "術繰の籠手",
+			"charName": "さと",
+			"weaponType": "格",
+			"attribute": "火"
+		},
+		{
+			"name": "蒼桜紅葉丸 (サビルバラ)",
+			"rate": "7.692%",
+			"type": "Characters",
+			"rare": "SSR",
+			"weaponName": "蒼桜紅葉丸",
+			"charName": "サビルバラ",
+			"weaponType": "刀",
+			"attribute": "火"
+		}
+	],
+	"normalWeapons": []
+}
