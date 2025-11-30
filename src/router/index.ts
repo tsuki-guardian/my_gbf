@@ -9,7 +9,7 @@ const routes: RouteRecordRaw[] = [
     redirect: '/',
     children: [
       {
-        path: '/',
+        path: '/my_gbf',
         name: 'Home',
         component: () => import('../views/Home.vue')
       },

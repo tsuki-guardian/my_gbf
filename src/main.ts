@@ -13,8 +13,3 @@ app.use(ElementPlus)
 app.use(router)
 app.use(pinia)
 app.mount('#app')
-
-// 使用 Vite 的環境變數方式（推薦）
-console.log("MODE:", import.meta.env.MODE)
-console.log("DEV:", import.meta.env.DEV)
-console.log("PROD:", import.meta.env.PROD)
