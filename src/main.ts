@@ -13,3 +13,5 @@ app.use(ElementPlus)
 app.use(router)
 app.use(pinia)
 app.mount('#app')
+
+console.log("NODE_ENV:", process.env.NODE_ENV)
