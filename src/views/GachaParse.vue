@@ -48,6 +48,7 @@
 									:class="{ 'selected': character.selected }"
 									@click="toggleCharacterSelect(index)"
 								>
+                  <p v-if="!character?.characterId" class="unknown-name">{{ character.name }}</p>
 									<el-image :src="character.imageURL" alt="" fit="cover" />
 									<div class="mask" v-if="!character.selected"></div>
 									<div class="rate-badge">{{ character.rate }}%</div>
@@ -64,6 +65,7 @@
 									:class="{ 'selected': summon.selected }"
 									@click="toggleSummonSelect(index)"
 								>
+                  <p v-if="!summon?.id" class="unknown-name">{{ summon.name }}</p>
 									<el-image :src="summon.imageURL" alt="" fit="cover" />
 									<div class="mask" v-if="!summon.selected"></div>
 									<div class="rate-badge">{{ summon.rate }}%</div>
@@ -129,6 +131,35 @@ const isParsed = ref(false)
 // 資料庫
 const characterDatabase = ref<any>(characterJson)
 const summonDatabase = ref<any>(summonsJson)
+
+// 靜態導入圖片資源
+import fireImg from '@/images/ssr_fire.jpg'
+import waterImg from '@/images/ssr_water.jpg'
+import earthImg from '@/images/ssr_earth.jpg'
+import windImg from '@/images/ssr_wind.jpg'
+import lightImg from '@/images/ssr_light.jpg'
+import darkImg from '@/images/ssr_dark.jpg'
+import unknownImg from '@/images/unknow.jpg'
+
+// 未知角色圖片
+const getLocalAttributeImg = (attribute: string) => {
+  switch (attribute) {
+    case '火':
+      return fireImg
+    case '水':
+      return waterImg
+    case '土':
+      return earthImg
+    case '風':
+      return windImg
+    case '光':
+      return lightImg
+    case '闇':
+      return darkImg
+    default:
+      return unknownImg
+  }
+}
 // 卡池資料
 const gachaData = ref<any>({
 	gachaName: '',
@@ -185,43 +216,65 @@ const handleParse = () => {
 		normalWeapons: [],
 	}
 
-	const parsedData = JSON.parse(inputData.value) as any
-	// 卡池名稱
-	gachaData.value.gachaName = parsedData.gachaName
-	// 角色
-	parsedData.Characters.forEach((character: any) => {
-		const chara = characterDatabase.value.find((item: any) => item.unlockWeapon === character.weaponName)
-		if (chara) {
-			if(chara.rare === 'SSR') {
-				gachaData.value.Characters.push({
-					...chara,
-					rate: parseFloat(character.rate.replace('%', '')),
-					imageURL: `https://prd-game-a1-granbluefantasy.akamaized.net/assets/img/sp/assets/npc/m/304${chara.characterId}000_01.jpg`,
+	try {
+		const parsedData = JSON.parse(inputData.value) as any
+		// 卡池名稱
+		gachaData.value.gachaName = parsedData.gachaName
+		// 角色
+		parsedData.Characters.forEach((character: any) => {
+			const chara = characterDatabase.value.find((item: any) => item.unlockWeapon === character.weaponName)
+			if (chara) {
+				if(chara.rare === 'SSR') {
+					gachaData.value.Characters.push({
+						...chara,
+						rate: parseFloat(character.rate.replace('%', '')),
+						imageURL: `https://prd-game-a1-granbluefantasy.akamaized.net/assets/img/sp/assets/npc/m/304${chara.characterId}000_01.jpg`,
+						selected: false, // 初始化為未選中
+					})
+				}
+			} else {
+				if(character.rare === 'SSR') {
+					gachaData.value.Characters.push({
+						name: character.charName,
+						unlockWeapon: character.weaponName,
+						rare: character.rare,
+						rate: parseFloat(character.rate.replace('%', '')),
+						imageURL: getLocalAttributeImg(character.attribute),
+						attribute: character.attribute,
+						selected: false, // 初始化為未選中
+					})
+				}
+				ElMessage.error(`角色 ${character.charName}(${character.weaponName}) 尚未定義`)
+			}
+		})
+		// 召喚石
+		parsedData.Summons.forEach((summon: any) => {
+			const summonData = summonDatabase.value.find((item: any) => item.name === summon.name)
+			if (summonData) {
+				gachaData.value.Summons.push({
+					...summonData,
+					rate: parseFloat(summon.rate.replace('%', '')),
+					imageURL: `https://prd-game-a1-granbluefantasy.akamaized.net/assets/img/sp/assets/summon/m/204${summonData.id}000.jpg`,
 					selected: false, // 初始化為未選中
 				})
+			} else if (summon.rare === 'SSR') {
+				// SSR 找不到才顯示錯誤（可能是名稱不符）
+				gachaData.value.Summons.push({
+					name: summon.name,
+					rate: parseFloat(summon.rate.replace('%', '')),
+					imageURL: getLocalAttributeImg(summon.attribute),
+					selected: false, // 初始化為未選中
+				})
+				ElMessage.error(`召喚石 ${summon.name} 尚未定義`)
 			}
-		} else {
-			ElMessage.error(`角色 ${character.name} 不存在`)
-		}
-	})
-	// 召喚石
-	parsedData.Summons.forEach((summon: any) => {
-		const summonData = summonDatabase.value.find((item: any) => item.name === summon.name)
-		if (summonData) {
-			gachaData.value.Summons.push({
-				...summonData,
-				rate: parseFloat(summon.rate.replace('%', '')),
-				imageURL: `https://prd-game-a1-granbluefantasy.akamaized.net/assets/img/sp/assets/summon/m/204${summonData.id}000.jpg`,
-				selected: false, // 初始化為未選中
-			})
-		} else if (summon.rare === 'SSR') {
-			// SSR 找不到才顯示錯誤（可能是名稱不符）
-			ElMessage.error(`召喚石 ${summon.name} 不存在`)
-		}
-		// R/SR 找不到則忽略（資料庫只有 SSR）
-	})
+			// R/SR 找不到則忽略（資料庫只有 SSR）
+		})
 
-	isParsed.value = true
+		isParsed.value = true
+	} catch (error) {
+		ElMessage.error('資料格式錯誤')
+		return
+	}
 }
 
 // 清空資料
@@ -349,6 +402,27 @@ const simulateGacha = () => {
             font-size: 12px;
             font-weight: 500;
             z-index: 10;
+          }
+
+          // 未知項目名稱
+          .unknown-name {
+            user-select: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 15;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 700;
+            text-align: center;
+            margin: 0;
+            white-space: nowrap;
+            max-width: 90%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8),
+                         -1px -1px 2px rgba(0, 0, 0, 0.8);
           }
 
           // 選中狀態

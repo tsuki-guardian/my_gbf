@@ -6,7 +6,7 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/',
     component: Layout,
-    redirect: '/',
+    redirect: '/my_gbf',
     children: [
       {
         path: '/my_gbf',
@@ -14,12 +14,12 @@ const routes: RouteRecordRaw[] = [
         component: () => import('../views/Home.vue')
       },
       {
-        path: '/about',
+        path: '/my_gbf/about',
         name: 'About',
         component: () => import('../views/About.vue')
       },
       {
-        path: '/gacha-parse',
+        path: '/my_gbf/gacha-parse',
         name: 'GachaParse',
         component: () => import('../views/GachaParse.vue')
       }

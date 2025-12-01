@@ -50,7 +50,7 @@
             </div>
           </template>
           <div class="quick-nav">
-            <el-button type="primary" :icon="InfoFilled" @click="$router.push('/about')">
+            <el-button type="primary" :icon="InfoFilled" @click="$router.push({ name: 'About' })">
               關於頁面
             </el-button>
             <el-button type="success" @click="toggleMenu">

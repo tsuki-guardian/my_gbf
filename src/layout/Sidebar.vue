@@ -9,7 +9,7 @@
       active-text-color="#409eff"
       router
     >
-      <el-menu-item index="/">
+      <el-menu-item index="/my_gbf">
         <el-icon><HomeFilled /></el-icon>
         <template #title>首頁</template>
       </el-menu-item>
@@ -28,10 +28,10 @@
           <el-icon><Box /></el-icon>
           <span>小工具</span>
         </template>
-        <el-menu-item index="/gacha-parse">卡池分析</el-menu-item>
+        <el-menu-item :index="getRoutePath('GachaParse')">卡池分析</el-menu-item>
       </el-sub-menu>
 
-      <el-menu-item index="/about">
+      <el-menu-item :index="getRoutePath('About')">
         <el-icon><InfoFilled /></el-icon>
         <template #title>關於</template>
       </el-menu-item>
@@ -41,17 +41,24 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { useMenuStore } from '@/stores'
 import { HomeFilled, Setting, InfoFilled, Box } from '@element-plus/icons-vue'
 
 const route = useRoute()
+const router = useRouter()
 const menuStore = useMenuStore()
 
 const activeMenu = computed(() => {
   const { path } = route
   return path
 })
+
+// 根據路由名稱獲取路徑
+const getRoutePath = (name: string) => {
+  const resolved = router.resolve({ name })
+  return resolved.path
+}
 </script>
 
 <style lang="scss" scoped>
