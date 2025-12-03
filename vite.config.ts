@@ -3,7 +3,7 @@ import vue from '@vitejs/plugin-vue'
 import { fileURLToPath, URL } from 'node:url'
 
 export default defineConfig({
-  base: '/my_gbf/',
+  // base: '/my_gbf/',
   plugins: [vue()],
   resolve: {
     alias: {

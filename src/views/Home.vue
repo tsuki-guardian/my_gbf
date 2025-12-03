@@ -5,12 +5,11 @@
         <el-card class="welcome-card">
           <template #header>
             <div class="card-header">
-              <span>歡迎回來，主人 ♡</span>
+              <span>總之先隨便塞點字在這</span>
             </div>
           </template>
           <div class="welcome-content">
             <h2>這是您的首頁儀表板</h2>
-            <p>柴郡已經幫主人準備好所有功能囉～喵♡</p>
           </div>
         </el-card>
       </el-col>

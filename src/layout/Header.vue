@@ -5,11 +5,11 @@
         <Expand v-if="menuStore.isCollapse" />
         <Fold v-else />
       </el-icon>
-      <span class="title">我的應用</span>
+      <span class="title">GBF Tools</span>
     </div>
     <div class="header-right">
       <!-- 這裡可以放置其他功能，如用戶信息、通知等 -->
-      <span class="user-info">歡迎回來，主人 ♡</span>
+      <span class="user-info">歡迎使用</span>
     </div>
   </el-header>
 </template>

@@ -9,7 +9,7 @@
       active-text-color="#409eff"
       router
     >
-      <el-menu-item index="/my_gbf">
+      <el-menu-item index="/">
         <el-icon><HomeFilled /></el-icon>
         <template #title>首頁</template>
       </el-menu-item>

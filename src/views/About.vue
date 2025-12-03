@@ -9,6 +9,7 @@
       <div class="content">
         <h2>關於本系統</h2>
         <p>這是一個使用 Vue 3 + TypeScript + Element Plus 構建的應用</p>
+        <p>本網站僅供個人學習使用，不涉及任何商業用途</p>
         <el-divider />
         <h3>技術棧</h3>
         <ul>
@@ -20,6 +21,8 @@
           <li>Pinia - Vue 狀態管理</li>
           <li>SCSS - CSS 預處理器</li>
         </ul>
+        <el-divider />
+        <p>by 花月紗 8891679</p>
       </div>
     </el-card>
   </div>

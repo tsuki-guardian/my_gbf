@@ -35,7 +35,7 @@
         <!-- 這裡預留給後續的資料顯示 -->
         <el-empty v-if="!isParsed" description="尚無資料" />
         <div v-else>
-          <!-- 主人可以在這裡添加顯示邏輯 -->
+          <!-- 可以在這裡添加顯示邏輯 -->
           <div>
 						<h2>{{ gachaData.gachaName }}</h2>
 					</div>
@@ -315,7 +315,7 @@ const simulateGacha = () => {
 		cumulativeRate += item.rate
 		if (random <= cumulativeRate) {
 			gachaResult.value = item
-			ElMessage.success(`恭喜主人抽到了 ${item.name} 喵♡`)
+			ElMessage.success(`恭喜抽到了 ${item.name} 喵♡`)
 			break
 		}
 	}
