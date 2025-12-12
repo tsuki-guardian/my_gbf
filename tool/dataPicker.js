@@ -21,7 +21,7 @@ if (gachaTitleEl) {
   data.gachaName = "";
 }
 
-// weapon / attribute 對照表
+// 武器類型對照
 const weaponMap = {
   'weapon/icon_1': '剣', //Sabre
   'weapon/icon_2': '短', //Dagger
@@ -34,7 +34,7 @@ const weaponMap = {
   'weapon/icon_9': '楽', //Harp
   'weapon/icon_10': '刀', //Katana
 };
-
+// 屬性對照
 const attrMap = {
   'type/icon_type_1': '火', //Fire
   'type/icon_type_2': '水', //Water
@@ -43,7 +43,6 @@ const attrMap = {
   'type/icon_type_5': '光', //Light
   'type/icon_type_6': '闇', //Dark
 };
-
 // 稀有度對照
 const rareMap = [
   { key: 'SSレア', value: 'SSR' },
@@ -108,6 +107,7 @@ const parseRare = (titleText) => {
   return ''; // 萬一沒對到就空字串
 };
 
+// 抓取卡池資料
 document.querySelectorAll('.prt-lineup-item').forEach((lineupItem) => {
   const titleEl = lineupItem.querySelector('.prt-title-ratio .txt-title-ratio');
   const titleText = titleEl ? titleEl.textContent.trim() : '';
@@ -124,6 +124,7 @@ document.querySelectorAll('.prt-lineup-item').forEach((lineupItem) => {
 
       const rawName = nameEl.textContent;
       const rate = rateEl ? rateEl.textContent.trim() : '';
+      const hasPickup = !!nameEl.querySelector('.ico-appear-up');
 
       const parsedName = parseName(rawName);
       const { attribute } = parseIcons(line); // 召喚石沒有 weaponType
@@ -136,6 +137,7 @@ document.querySelectorAll('.prt-lineup-item').forEach((lineupItem) => {
         summonName: parsedName.weaponName,
         weaponType: '',            // 召喚石沒有武器類型
         attribute,                 // Fire / Water / ...
+        pickup: hasPickup,
       });
     });
 
@@ -151,6 +153,7 @@ document.querySelectorAll('.prt-lineup-item').forEach((lineupItem) => {
 
       const rawName = nameEl.textContent;
       const rate = rateEl ? rateEl.textContent.trim() : '';
+      const hasPickup = !!nameEl.querySelector('.ico-appear-up');
 
       const parsedName = parseName(rawName);
       const { weaponType, attribute } = parseIcons(line);
@@ -164,6 +167,7 @@ document.querySelectorAll('.prt-lineup-item').forEach((lineupItem) => {
         charName: parsedName.charName,
         weaponType,
         attribute,
+        pickup: hasPickup,
       });
     });
 
@@ -179,6 +183,7 @@ document.querySelectorAll('.prt-lineup-item').forEach((lineupItem) => {
 
       const rawName = nameEl.textContent;
       const rate = rateEl ? rateEl.textContent.trim() : '';
+      const hasPickup = !!nameEl.querySelector('.ico-appear-up');
 
       // 備註：通常武器不會有後綴角色，所以不用拆 charName
       const parsedName = parseName(rawName);
@@ -192,6 +197,7 @@ document.querySelectorAll('.prt-lineup-item').forEach((lineupItem) => {
         weaponName: parsedName.weaponName,
         weaponType,
         attribute,
+        pickup: hasPickup,
       });
     });
 

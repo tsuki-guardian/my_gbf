@@ -16,10 +16,13 @@
         />
         <div class="action-buttons">
           <el-button type="primary" @click="handleParse">
-            解析資料
+            執行解析
           </el-button>
           <el-button @click="handleClear">
             清空
+          </el-button>
+          <el-button type="info" class="ml_auto" @click="copyToolCode">
+            卡池擷取工具
           </el-button>
         </div>
       </div>
@@ -51,7 +54,7 @@
                   <p v-if="!character?.characterId" class="unknown-name">{{ character.name }}</p>
 									<el-image :src="character.imageURL" alt="" fit="cover" />
 									<div class="mask" v-if="!character.selected"></div>
-									<div class="rate-badge">{{ character.rate }}%</div>
+									<div class="rate-badge" :class="{ 'pickup': character.pickup }">{{ character.rate }}%</div>
 								</div>
 							</el-col>
 						</el-row>
@@ -68,7 +71,7 @@
                   <p v-if="!summon?.id" class="unknown-name">{{ summon.name }}</p>
 									<el-image :src="summon.imageURL" alt="" fit="cover" />
 									<div class="mask" v-if="!summon.selected"></div>
-									<div class="rate-badge">{{ summon.rate }}%</div>
+									<div class="rate-badge" :class="{ 'pickup': summon.pickup }">{{ summon.rate }}%</div>
 								</div>
 							</el-col>
 						</el-row>
@@ -123,6 +126,7 @@ import { ref, computed } from 'vue'
 import { ElMessage } from 'element-plus'
 import characterJson from '../../json/character.json'
 import summonsJson from '../../json/summons.json'
+import toolCode from '../../tool/mini_dataPicker.js?raw'
 
 // 輸入的原始資料
 const inputData = ref('')
@@ -230,6 +234,7 @@ const handleParse = () => {
 						rate: parseFloat(character.rate.replace('%', '')),
 						imageURL: `https://prd-game-a1-granbluefantasy.akamaized.net/assets/img/sp/assets/npc/m/304${chara.characterId}000_01.jpg`,
 						selected: false, // 初始化為未選中
+						pickup: character.pickup || false, // pickup 標記
 					})
 				}
 			} else {
@@ -242,6 +247,7 @@ const handleParse = () => {
 						imageURL: getLocalAttributeImg(character.attribute),
 						attribute: character.attribute,
 						selected: false, // 初始化為未選中
+						pickup: character.pickup || false, // pickup 標記
 					})
 				}
 				ElMessage.error(`角色 ${character.charName}(${character.weaponName}) 尚未定義`)
@@ -256,6 +262,7 @@ const handleParse = () => {
 					rate: parseFloat(summon.rate.replace('%', '')),
 					imageURL: `https://prd-game-a1-granbluefantasy.akamaized.net/assets/img/sp/assets/summon/m/204${summonData.id}000.jpg`,
 					selected: false, // 初始化為未選中
+					pickup: summon.pickup || false, // pickup 標記
 				})
 			} else if (summon.rare === 'SSR') {
 				// SSR 找不到才顯示錯誤（可能是名稱不符）
@@ -264,6 +271,7 @@ const handleParse = () => {
 					rate: parseFloat(summon.rate.replace('%', '')),
 					imageURL: getLocalAttributeImg(summon.attribute),
 					selected: false, // 初始化為未選中
+					pickup: summon.pickup || false, // pickup 標記
 				})
 				ElMessage.error(`召喚石 ${summon.name} 尚未定義`)
 			}
@@ -320,6 +328,18 @@ const simulateGacha = () => {
 		}
 	}
 }
+
+// 複製工具代碼
+const copyToolCode = async () => {
+	try {
+		await navigator.clipboard.writeText(toolCode)
+		ElMessage.success('已複製工具到剪貼簿，請存放到書籤網址，並在【提供割合】頁面使用')
+		// throw new Error('模擬複製失敗')
+	} catch (error) {
+		ElMessage.error('笑死，工具壞啦！去找人修一下啦！')
+		console.error('Copy failed:', error)
+	}
+}
 </script>
 
 <style lang="scss" scoped>
@@ -339,6 +359,10 @@ const simulateGacha = () => {
         margin-top: 15px;
         display: flex;
         gap: 10px;
+
+        button.ml_auto {
+          margin-left: auto;
+        }
       }
     }
   }
@@ -402,6 +426,10 @@ const simulateGacha = () => {
             font-size: 12px;
             font-weight: 500;
             z-index: 10;
+
+            &.pickup {
+              background-color: rgba(216, 165, 26, 0.9);
+            }
           }
 
           // 未知項目名稱

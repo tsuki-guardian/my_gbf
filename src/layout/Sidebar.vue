@@ -28,7 +28,7 @@
           <el-icon><Box /></el-icon>
           <span>小工具</span>
         </template>
-        <el-menu-item :index="getRoutePath('GachaParse')">卡池分析</el-menu-item>
+        <el-menu-item :index="getRoutePath('GachaParse')">卡池圖形化</el-menu-item>
       </el-sub-menu>
 
       <el-menu-item :index="getRoutePath('About')">
