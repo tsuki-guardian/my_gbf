@@ -323,7 +323,7 @@ const simulateGacha = () => {
 		cumulativeRate += item.rate
 		if (random <= cumulativeRate) {
 			gachaResult.value = item
-			ElMessage.success(`恭喜抽到了 ${item.name} 喵♡`)
+			ElMessage.success(`抽到了 ${item.name}`)
 			break
 		}
 	}
