@@ -14446,6 +14446,29 @@
   {
     "no": "628",
     "rare": "SSR",
+    "name": "ダリダラ",
+    "attribute": "水",
+    "type": "バランス",
+    "race": "ハーヴィン",
+    "sex": "M",
+    "weapon": "斧",
+    "series": "",
+    "maxHP": "1719",
+    "maxATK": "7605",
+    "hasSubEffect": false,
+    "hasFinalLimit": false,
+    "crossFate": "0",
+    "autoExplore": "",
+    "voiceActor": "坂泰斗",
+    "unlockWeapon": "－",
+    "hasWeaponLimit": false,
+    "releaseDate": "2025/12/28",
+    "notes": "",
+    "characterId": "0631"
+  },
+  {
+    "no": "629",
+    "rare": "SSR",
     "name": "アマテラス",
     "attribute": "光",
     "type": "回復",
@@ -14464,7 +14487,7 @@
     "hasWeaponLimit": false,
     "releaseDate": "2025/12/28",
     "notes": "ガチャ(常設)",
-    "characterId": "0631"
+    "characterId": "0634"
   },
   {
     "no": "1001",
