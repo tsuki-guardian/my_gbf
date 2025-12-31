@@ -982,5 +982,37 @@
 		"series": "コラボ",
 		"type": "Summons",
 		"rare": "SSR"
+	},
+	{
+		"id": "0445",
+		"name": "マリ＆８号機",
+		"attribute": "風",
+		"series": "コラボ",
+		"type": "Summons",
+		"rare": "SSR"
+	},
+	{
+		"id": "0446",
+		"name": "ベルメルヴォルク",
+		"attribute": "火",
+		"series": "",
+		"type": "Summons",
+		"rare": "SSR"
+	},
+	{
+		"id": "0447",
+		"name": "ニフイヴィンテ",
+		"attribute": "水",
+		"series": "",
+		"type": "Summons",
+		"rare": "SSR"
+	},
+	{
+		"id": "0448",
+		"name": "ヴェルサシア",
+		"attribute": "火",
+		"series": "プロヴィデンスシリーズ",
+		"type": "Summons",
+		"rare": "SSR"
 	}
 ]
