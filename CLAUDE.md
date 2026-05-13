@@ -120,8 +120,8 @@ Summon database (`json/summons.json`):
 ```
 
 Image URL patterns:
-- Characters: `https://prd-game-a1-granbluefantasy.akamaized.net/assets/img/sp/assets/npc/m/304${characterId}000_01.jpg`
-- Summons: `https://prd-game-a1-granbluefantasy.akamaized.net/assets/img/sp/assets/summon/m/204${id}000.jpg`
+- Characters: `https://prd-game-a-granbluefantasy.akamaized.net/assets/img/sp/assets/npc/m/304${characterId}000_01.jpg`
+- Summons: `https://prd-game-a-granbluefantasy.akamaized.net/assets/img/sp/assets/summon/m/204${id}000.jpg`
 
 ## Important Notes
 

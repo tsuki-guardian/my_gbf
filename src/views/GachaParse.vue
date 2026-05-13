@@ -175,14 +175,16 @@ const gachaData = ref<any>({
 // 抽卡結果
 const gachaResult = ref<any>(null)
 
-// 切換角色選中狀態
-const toggleCharacterSelect = (index: number) => {
-	gachaData.value.Characters[index].selected = !gachaData.value.Characters[index].selected
+// 切換角色選中狀態（v-for 的 index 在型別上為 string | number）
+const toggleCharacterSelect = (index: string | number) => {
+	const i = Number(index)
+	gachaData.value.Characters[i].selected = !gachaData.value.Characters[i].selected
 }
 
 // 切換召喚石選中狀態
-const toggleSummonSelect = (index: number) => {
-	gachaData.value.Summons[index].selected = !gachaData.value.Summons[index].selected
+const toggleSummonSelect = (index: string | number) => {
+	const i = Number(index)
+	gachaData.value.Summons[i].selected = !gachaData.value.Summons[i].selected
 }
 
 // 計算已選擇項目數量
@@ -232,7 +234,7 @@ const handleParse = () => {
 					gachaData.value.Characters.push({
 						...chara,
 						rate: parseFloat(character.rate.replace('%', '')),
-						imageURL: `https://prd-game-a1-granbluefantasy.akamaized.net/assets/img/sp/assets/npc/m/304${chara.characterId}000_01.jpg`,
+						imageURL: `https://prd-game-a-granbluefantasy.akamaized.net/assets/img/sp/assets/npc/m/304${chara.characterId}000_01.jpg`,
 						selected: false, // 初始化為未選中
 						pickup: character.pickup || false, // pickup 標記
 					})
@@ -260,7 +262,7 @@ const handleParse = () => {
 				gachaData.value.Summons.push({
 					...summonData,
 					rate: parseFloat(summon.rate.replace('%', '')),
-					imageURL: `https://prd-game-a1-granbluefantasy.akamaized.net/assets/img/sp/assets/summon/m/204${summonData.id}000.jpg`,
+					imageURL: `https://prd-game-a-granbluefantasy.akamaized.net/assets/img/sp/assets/summon/m/204${summonData.id}000.jpg`,
 					selected: false, // 初始化為未選中
 					pickup: summon.pickup || false, // pickup 標記
 				})
