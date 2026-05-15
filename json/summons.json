@@ -1014,5 +1014,13 @@
 		"series": "プロヴィデンスシリーズ",
 		"type": "Summons",
 		"rare": "SSR"
+	},
+	{
+		"id": "0456",
+		"name": "アレックス・ルイ・アームストロング",
+		"attribute": "水",
+		"series": "コラボ",
+		"type": "Summons",
+		"rare": "SSR"
 	}
 ]
