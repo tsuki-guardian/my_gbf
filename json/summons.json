@@ -1022,5 +1022,13 @@
 		"series": "コラボ",
 		"type": "Summons",
 		"rare": "SSR"
+	},
+	{
+		"id": "0457",
+		"name": "ローダーン",
+		"attribute": "火",
+		"series": "アキエシシリーズ",
+		"type": "Summons",
+		"rare": "SSR"
 	}
 ]
