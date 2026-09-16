@@ -15276,6 +15276,78 @@
     "characterId": "0669"
   },
   {
+    "no": "666",
+    "rare": "SSR",
+    "name": "グウィン(浴衣ver)",
+    "attribute": "風",
+    "series": "浴衣",
+    "unlockWeapon": "炸華紋",
+    "characterId": "0670"
+  },
+  {
+    "no": "667",
+    "rare": "SSR",
+    "name": "ヨウ(水着ver)",
+    "attribute": "水",
+    "series": "水着",
+    "unlockWeapon": "愛沿之浮袋",
+    "characterId": "0671"
+  },
+  {
+    "no": "668",
+    "rare": "SSR",
+    "name": "ハイラ(水着ver)",
+    "attribute": "光",
+    "series": "水着",
+    "unlockWeapon": "第五辰行肌護油",
+    "characterId": "0672"
+  },
+  {
+    "no": "669",
+    "rare": "SSR",
+    "name": "シス(水着ver)",
+    "attribute": "土",
+    "series": "水着",
+    "unlockWeapon": "神狼暗牙",
+    "characterId": "0673"
+  },
+  {
+    "no": "670",
+    "rare": "SSR",
+    "name": "バドラ(リミテッドver)",
+    "attribute": "光",
+    "series": "リミテッド",
+    "unlockWeapon": "菩提心槌",
+    "characterId": "0674"
+  },
+  {
+    "no": "671",
+    "rare": "SSR",
+    "name": "モルドレッド",
+    "attribute": "闇",
+    "series": "",
+    "unlockWeapon": "宝剣クラレント",
+    "characterId": "0675"
+  },
+  {
+    "no": "672",
+    "rare": "SSR",
+    "name": "ウルキ(風属性ver)",
+    "attribute": "風",
+    "series": "四聖",
+    "unlockWeapon": "なかよしペンギンさん",
+    "characterId": "0676"
+  },
+  {
+    "no": "673",
+    "rare": "SSR",
+    "name": "ココピオ",
+    "attribute": "火",
+    "series": "",
+    "unlockWeapon": "護尊紅刃",
+    "characterId": "0677"
+  },
+  {
     "no": "1001",
     "rare": "SR",
     "name": "ノイシュ",

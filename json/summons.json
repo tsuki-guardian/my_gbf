@@ -705,7 +705,7 @@
 	},
 	{
 		"id": "0374",
-		"name": "フレイ(浴衣ver)",
+		"name": "フレイ (水着バージョン)",
 		"attribute": "土",
 		"series": "浴衣",
 		"type": "Summons",
@@ -1027,6 +1027,30 @@
 		"id": "0457",
 		"name": "ローダーン",
 		"attribute": "火",
+		"series": "アキエシシリーズ",
+		"type": "Summons",
+		"rare": "SSR"
+	},
+	{
+		"id": "0460",
+		"name": "浦原喜助",
+		"attribute": "光",
+		"series": "コラボ",
+		"type": "Summons",
+		"rare": "SSR"
+	},
+	{
+		"id": "0461",
+		"name": "タル子マン(水着バージョン)",
+		"attribute": "土",
+		"series": "水着",
+		"type": "Summons",
+		"rare": "SSR"
+	},
+	{
+		"id": "0462",
+		"name": "バステト",
+		"attribute": "光",
 		"series": "アキエシシリーズ",
 		"type": "Summons",
 		"rare": "SSR"
