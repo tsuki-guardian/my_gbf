@@ -15278,6 +15278,15 @@
   {
     "no": "666",
     "rare": "SSR",
+    "name": "四楓院夜一",
+    "attribute": "光",
+    "series": "コラボ",
+    "unlockWeapon": "－",
+    "characterId": "0667"
+  },
+  {
+    "no": "667",
+    "rare": "SSR",
     "name": "グウィン(浴衣ver)",
     "attribute": "風",
     "series": "浴衣",
@@ -15285,7 +15294,7 @@
     "characterId": "0670"
   },
   {
-    "no": "667",
+    "no": "668",
     "rare": "SSR",
     "name": "ヨウ(水着ver)",
     "attribute": "水",
@@ -15294,7 +15303,7 @@
     "characterId": "0671"
   },
   {
-    "no": "668",
+    "no": "669",
     "rare": "SSR",
     "name": "ハイラ(水着ver)",
     "attribute": "光",
@@ -15303,7 +15312,7 @@
     "characterId": "0672"
   },
   {
-    "no": "669",
+    "no": "670",
     "rare": "SSR",
     "name": "シス(水着ver)",
     "attribute": "土",
@@ -15312,7 +15321,7 @@
     "characterId": "0673"
   },
   {
-    "no": "670",
+    "no": "671",
     "rare": "SSR",
     "name": "バドラ(リミテッドver)",
     "attribute": "光",
@@ -15321,7 +15330,7 @@
     "characterId": "0674"
   },
   {
-    "no": "671",
+    "no": "672",
     "rare": "SSR",
     "name": "モルドレッド",
     "attribute": "闇",
@@ -15330,7 +15339,7 @@
     "characterId": "0675"
   },
   {
-    "no": "672",
+    "no": "673",
     "rare": "SSR",
     "name": "ウルキ(風属性ver)",
     "attribute": "風",
@@ -15339,13 +15348,58 @@
     "characterId": "0676"
   },
   {
-    "no": "673",
+    "no": "674",
     "rare": "SSR",
     "name": "ココピオ",
     "attribute": "火",
     "series": "",
     "unlockWeapon": "護尊紅刃",
     "characterId": "0677"
+  },
+  {
+    "no": "675",
+    "rare": "SSR",
+    "name": "バザラガ(リミテッドver)",
+    "attribute": "土",
+    "series": "リミテッド",
+    "unlockWeapon": "ペインキラー",
+    "characterId": "0678"
+  },
+  {
+    "no": "676",
+    "rare": "SSR",
+    "name": "アルバ",
+    "attribute": "水",
+    "series": "",
+    "unlockWeapon": "シルバー・ヴァイン",
+    "characterId": "0679"
+  },
+  {
+    "no": "677",
+    "rare": "SSR",
+    "name": "イーウィヤ",
+    "attribute": "闇",
+    "series": "ハロウィン",
+    "unlockWeapon": "イーウィヤ・ポーカス",
+    "characterId": "0680"
+  },
+  {
+    "no": "678",
+    "rare": "SSR",
+    "name": "アズサ",
+    "attribute": "火",
+    "series": "ハロウィン",
+    "unlockWeapon": "蜘蛛切丸",
+    "characterId": "0681"
+  },
+  {
+    "no": "679",
+    "rare": "SSR",
+    "name": "ランドル",
+    "attribute": "光",
+    "series": "ハロウィン",
+    "unlockWeapon": "フュージティヴ・クロウ",
+    "characterId": "0682"
   },
   {
     "no": "1001",
